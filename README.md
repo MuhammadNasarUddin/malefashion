@@ -1,4 +1,4 @@
-[Watch the Video](https://www.youtube.com/watch?v=malefashion.mp4)
+<video src="https://github.com/MuhammadNasarUddin/malefashion/blob/main/malefashion.mp4" controls title="Title"></video>
 # Male Fashion Ecommerce Django Project
 
 Welcome to the Male Fashion Ecommerce Django project! This project is designed to provide a dynamic and user-friendly platform for selling male fashion products. Users can explore various categories, apply filters, add products to their cart, and proceed to checkout. The project also supports user authentication, allowing users to log in via email or Google.
