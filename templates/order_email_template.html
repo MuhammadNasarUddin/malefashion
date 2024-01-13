@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #3498db;
+        }
+
+        strong {
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Hi {{ user.username }},</p>
+        <p>Thank you for placing an order on Male Fashion. Your order has been confirmed!</p>
+
+        <h2>Order Details:</h2>
+        <p><strong>Order ID:</strong> {{ new_order.id }}</p>
+        <p><strong>Total Price (including GST and delivery charge):</strong> PKR{{ total_price_with_gst }}</p>
+
+        <p>We appreciate your business and look forward to serving you again.</p>
+
+        <footer>
+            <p>If you have any questions, please contact our support team at support@malefashion.com.</p>
+        </footer>
+    </div>
+</body>
+</html>

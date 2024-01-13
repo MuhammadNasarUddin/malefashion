@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462119.41075468186!2d66.82581825859!3d25.192837140218654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e06651d4bbf%3A0x9cf92f44555a0c23!2sKarachi%2C%20Karachi%20City%2C%20Sindh%2C%20Pakistan!5e0!3m2!1sen!2s!4v1704710697884!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<!-- Map End -->
+
+<!-- Contact Section Begin -->
+<section class="contact spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="contact__text">
+                    <div class="section-title">
+                        <span>Information</span>
+                        <h2>Contact Us</h2>
+                        <p>As you might expect of a company that began as a high-end interiors contractor, we pay
+                            strict attention.</p>
+                    </div>
+                    <ul>
+                        <li>
+                            <h4>America</h4>
+                            <p>195 E Parker Square Dr, Parker, CO 801 <br />+43 982-314-0958</p>
+                        </li>
+                        <li>
+                            <h4>France</h4>
+                            <p>109 Avenue Léon, 63 Clermont-Ferrand <br />+12 345-423-9893</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="contact__form">
+                    <form id="myForm" action="" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input type="text" name="name" placeholder="Name" required>
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="text" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="col-lg-12">
+                                <textarea placeholder="Message" name="message" required></textarea>
+                                <button type="submit"  class="site-btn">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section End -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#myForm').submit(function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            
+            // Perform form validation if needed
+            
+            // AJAX form submission
+            $.ajax({
+                url: $(this).attr('action'),
+                method: $(this).attr('method'),
+                data: $(this).serialize(),
+                success: function(response) {
+                    // Trigger Swal alert upon successful form submission
+                    Swal.fire({
+                        title: "Successfully Submitted",
+                        text: "Thanks for your feedback!",
+                        icon: "success"
+                    });
+                    
+                    // Additional actions after successful form submission, if needed
+                },
+                error: function(xhr, status, error) {
+                    // Handle errors, if any
+                    console.error(error);
+                }
+            });
+        });
+    });
+</script>
+
+{% endblock %}

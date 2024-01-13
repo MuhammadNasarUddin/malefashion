@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load socialaccount %}
+
+
+
+
+{% block content %}
+
+<section class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <h4>Signup</h4>
+                    <div class="breadcrumb__links">
+                        <a href="/">Home</a>
+                        <span>Signup</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<div class="container mt-5 w-50">
+  <form method="post">
+      {% csrf_token %}
+      <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" name="username" id="username" placeholder="hello56" required>
+      </div>
+
+      <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" name="email" id="email" placeholder="hello@example.com" aria-describedby="emailHelp" required>
+      </div>
+
+      <div class="mb-3">
+          <label for="password1" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password1" placeholder="*******" id="password1" required>
+      </div>
+
+      <div class="mb-3">
+          <label for="password2" class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" name="password2" id="password2" placeholder="********" required>
+      </div>
+
+      <button type="submit" class="btn btn-dark">Signup</button>
+  </form>  
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}
