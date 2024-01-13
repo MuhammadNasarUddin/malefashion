@@ -1,4 +1,4 @@
-[![Video Thumbnail](/home/didx/Desktop/djangoecommerce/estore/malefashion.png)](/home/didx/Desktop/djangoecommerce/estore/malefashion.mp4)
+[![Video Thumbnail](malefashion.png)](malefashion.mp4)
 
 
 # Male Fashion Ecommerce Django Project
